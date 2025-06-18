@@ -1,0 +1,120 @@
+.home-hero {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  background: url("https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-2ddf-4d48-ae88-c201ae0267e5/0efe6360-4f6d-4b10-beb6-81e0762cfe81/RU-ru-20231030-popsignuptwoweeks-perspective_alpha_website_large.jpg")
+    no-repeat center center/cover;
+}
+
+.home-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.home-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.home-hero-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.home-hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.home-hero-text h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.home-cta {
+  margin-top: 2rem;
+}
+
+.home-cta p {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.home-auth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.home-signin-btn,
+.home-signup-btn,
+.home-browse-btn {
+  padding: 12px 20px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.home-signin-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid white;
+}
+
+.home-signin-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.home-signup-btn,
+.home-browse-btn {
+  background-color: #2a09e5;
+  color: white;
+}
+
+.home-signup-btn:hover,
+.home-browse-btn:hover {
+  background-color: #0616f4;
+}
+
+@media (max-width: 768px) {
+  .home-hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .home-hero-text h2 {
+    font-size: 1.25rem;
+  }
+
+  .home-auth-buttons {
+    flex-direction: column;
+  }
+
+  .home-signin-btn,
+  .home-signup-btn,
+  .home-browse-btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}

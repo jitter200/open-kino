@@ -1,0 +1,234 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: "YS Text-Regular", "YS Text-Black", sans-serif;
+  background-color: black;
+  color: white;
+}
+
+.hero {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3rem;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+}
+
+.hero-top {
+  position: absolute;
+  top: 1.5rem;
+  left: 3rem;
+  right: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  padding-right: 1rem;
+}
+
+.logo {
+  height: 40px;
+}
+
+.sign-in-button {
+  background: #0000ff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.get-started-button {
+  background: #0000ff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.get-started-button:hover {
+  background: #0000ff;
+}
+
+.get-started-button .arrow {
+  font-size: 1.25rem;
+  line-height: 1;
+  position: relative;
+  top: -1px;
+}
+
+.category {
+  margin-top: 3rem;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 2.5rem !important;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  align-self: flex-start;
+  padding-left: 15rem;
+  font-family: "YS Text-Black";
+}
+
+.trending-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0 3rem 2rem;
+  margin-top: 2.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.trending-row::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-card {
+  position: relative;
+  width: 200px;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.movie-card:hover {
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+.poster-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  /* УБРАНО: overflow: hidden */
+}
+
+.poster-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.ranking-number {
+  position: absolute;
+  top: 0.25rem;
+  left: -1rem;
+  font-size: 4rem;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 1px white;
+  font-family: "YS Text-Black";
+  z-index: 3;
+  pointer-events: none;
+}
+.bottom-border-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
+.divider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  position: relative;
+  z-index: 2;
+  margin-top: -2px; /* чтобы "накрыло" границу */
+}
+
+.section-divider {
+  width: 100%;
+  height: 100px;
+  display: block;
+}
+
+/* Стили для загрузчика */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #141414;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-left-color: #0000ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

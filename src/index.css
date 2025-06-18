@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --netflix-red: #0000ff;
+    --netflix-black: #141414;
+    --netflix-dark: #181818;
+    --netflix-dark-lighter: #222222;
+    --netflix-gray: #808080;
+    --netflix-light-gray: #b3b3b3;
+    --netflix-white: #ffffff;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-netflix-black text-white font-netflix-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  /* Кастомный скроллбар */
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-netflix-black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-netflix-red text-white px-5 py-2.5 rounded font-medium hover:bg-blue-700 transition-colors duration-300 inline-flex items-center justify-center;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-600/80 text-white px-5 py-2.5 rounded font-medium hover:bg-gray-600 transition-colors duration-300 inline-flex items-center justify-center backdrop-blur-sm;
+  }
+
+  .movie-card {
+    @apply relative overflow-hidden rounded-md transition-all duration-300 hover:scale-110 shadow-md hover:shadow-xl;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-black/20 backdrop-saturate-150;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Анимация для модального окна */
+  .modal-animation-enter {
+    @apply opacity-0 scale-95;
+  }
+  .modal-animation-enter-active {
+    @apply opacity-100 scale-100 transition-all duration-300;
+  }
+  .modal-animation-exit {
+    @apply opacity-100 scale-100;
+  }
+  .modal-animation-exit-active {
+    @apply opacity-0 scale-95 transition-all duration-200;
+  }
+
+  /* Netflix-стиль заголовка */
+  .netflix-title {
+    @apply font-bebas-neue text-7xl sm:text-8xl lg:text-9xl tracking-tight text-shadow-lg leading-none;
+  }
+
+  /* Стилизация для постера */
+  .poster-hover-effect {
+    @apply relative transition-transform duration-300 ease-out transform hover:scale-105 hover:z-10;
+  }
+
+  .poster-hover-effect::after {
+    content: "";
+    @apply absolute inset-0 rounded-md opacity-0 transition-opacity duration-300 hover:opacity-100 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none;
+  }
+
+  /* Красивый градиентный текст */
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Эффект свечения для кнопок */
+  .glow-effect {
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
+  }
+
+  /* Линии ограничения текста */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}

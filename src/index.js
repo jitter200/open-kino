@@ -1,11 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./styles/index.css";
-import App from "./App";
+// Components
+export { default as ProtectedRoute } from "./components/ProtectedRoute";
+export { default as AdminRoute } from "./components/AdminRoute";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// Context
+export { useAuth, AuthProvider } from "./context/AuthContext";
+
+// Pages
+export { Auth } from "./pages/Auth";
